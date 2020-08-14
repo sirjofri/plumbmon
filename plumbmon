@@ -17,12 +17,7 @@ fn sigint{
 }
 
 fn checkdata{
-	pwdlen=`{echo -n $pwd | wc -c}
-	cutdata=`{echo -n $data | read -c $pwdlen}
-	if(~ $pwd $cutdata)
-		echo $data
-	if not
-		echo $pwd/$data
+	cleanname -d $pwd $data
 }
 
 fn chlisten{
