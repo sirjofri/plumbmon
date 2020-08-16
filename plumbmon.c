@@ -21,7 +21,7 @@ checkchan(char *port)
 	for(;;){
 		if((m = plumbrecv(fd)) == nil)
 			sysfatal("plumbrecv: %r");
-		print("%s %s\n", port, m->data);
+		print("%s	%s\n", port, m->data);
 		plumbfree(m);
 	}
 }
@@ -29,13 +29,11 @@ checkchan(char *port)
 void
 main(int argc, char **argv)
 {
-	int pid;
 	if(argc < 2)
 		usage();
 
 	while(argc-- > 1){
-		print("arg: %s\n", argv[argc]);
-		switch(pid = fork()){
+		switch(fork()){
 		case -1:
 			sysfatal("fork: %r");
 			break;

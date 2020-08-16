@@ -1,5 +1,6 @@
 </$objtype/mkfile
 
+BIN=$home/bin/$objtype
 TARG=plumbmon
 OFILES=plumbmon.$O
 
